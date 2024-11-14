@@ -11,9 +11,9 @@ const  Product=async()=>{
     return (
         <div>
             <h1>UsersPage</h1>
-            {data.map(each => <ol key={each.id}>
-                <li>{each.name}</li>
-            </ol>)} 
+            <ol type="1">
+                {data.map(each => <li key={each.id}>{each.name}</li>)}
+            </ol>
         </div>
     )
 }
