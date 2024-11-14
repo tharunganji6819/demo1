@@ -10,7 +10,7 @@ const  Product=async()=>{
 
     return (
         <div>
-            <h1>products Page</h1>
+            <h1>UsersPage</h1>
             {data.map(each => <ol key={each.id}>
                 <li>{each.name}</li>
             </ol>)} 
