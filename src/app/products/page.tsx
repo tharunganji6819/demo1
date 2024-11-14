@@ -1,22 +1,35 @@
-interface User{
-    id:number,
-    name:string,
-}
-const  Product=async()=>{
+"use client";
 
-    const res=await fetch('https://jsonplaceholder.typicode.com/users')
-    const data:User[]=await res.json()
-    console.log(data)
+import { useState, useEffect } from "react";
 
-    return (
-        <div>
-            <h1>UsersPage</h1>
-            <ol type="1">
-                {data.map(each => <li key={each.id}>{each.name}</li>)}
-            </ol>
-        </div>
-    )
+interface User {
+  id: number;
+  name: string;
 }
 
+const Product = () => {
+  const [data, setData] = useState<User[]>([]);
 
-export default Product
+  useEffect(() => {
+    const fetchData = async () => {
+      const res = await fetch("https://jsonplaceholder.typicode.com/users");
+      const users = await res.json();
+      setData(users);
+    };
+
+    fetchData();
+  }, []);
+
+  return (
+    <div>
+      <h1>Products Page</h1>
+      <ol type="1">
+        {data.map((each) => (
+          <li key={each.id}>{each.name}</li>
+        ))}
+      </ol>
+    </div>
+  );
+};
+
+export default Product;
