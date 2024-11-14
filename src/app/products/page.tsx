@@ -22,7 +22,7 @@ const Product = () => {
 
   return (
     <div>
-      <h1>Products Page</h1>
+      <h1>Users Page</h1>
       <ol type="1">
         {data.map((each) => (
           <li key={each.id}>{each.name}</li>
